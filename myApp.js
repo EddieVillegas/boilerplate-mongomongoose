@@ -4,10 +4,12 @@ const PersonModel = require("./models/person")
 
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
-let Person = new PersonModel();
+let Person = PersonModel
 
-const createAndSavePerson = (done) => {
-  done(null /*, data*/);
+const createAndSavePerson = async (done) => {
+  // done(null /*, data*/);
+  const persons = await Person.find({})
+  return persons
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
