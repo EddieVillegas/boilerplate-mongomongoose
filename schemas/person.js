@@ -5,14 +5,8 @@ const personSchema = new Schema({
         type: String,
         required: true
     },
-    age: {
-        type: Number,
-        required: true
-    },
-    favoriteFoods: {
-        type: [String],
-        required: true
-    }
+    age: Number,
+    favoriteFoods: [String]
 })
 
 module.exports = personSchema
