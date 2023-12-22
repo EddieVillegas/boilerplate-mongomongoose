@@ -7,9 +7,15 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 let Person = PersonModel
 
 const createAndSavePerson = async (done) => {
-  // done(null /*, data*/);
-  const persons = await Person.find({})
-  return persons
+  const janeFonda = new Person({
+    name: "Jane Fonda", 
+    age: 84, 
+    favoriteFoods: ["eggs", "fish", "fresh fruit"]
+  });
+  person.save((err,data) => {
+    if(error) done(error)
+    done(null, data);
+  })
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
