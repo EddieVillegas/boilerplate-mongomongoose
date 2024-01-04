@@ -12,8 +12,8 @@ const createAndSavePerson = async (done) => {
     age: 84, 
     favoriteFoods: ["eggs", "fish", "fresh fruit"]
   });
-  person.save((err,data) => {
-    if(error) done(error)
+  janeFonda.save((err,data) => {
+    if(err) done(err)
     done(null, data);
   })
 };
